@@ -18,7 +18,7 @@ def receive():
     # Prevent self-reply
     if data['sender_type'] != 'bot':
         if data['text'].startswith('/ping'):
-            send(data['name'] + ' pinged me!')
+            send('Hello, ' + data['name'] + '! -Tyler Tech')
 
     return 'ok', 200
 
@@ -27,7 +27,7 @@ def send(msg):
     url  = 'https://api.groupme.com/v3/bots/post'
 
     data = {
-        'bot_id': os.getenv('BOT_ID'),
+        'bot_id': '9dbb99f422e2783d8fc0e7005a',
         'text': msg,
     }
     r = requests.post(url, data=data)

@@ -27,7 +27,7 @@ def send(msg):
     url  = 'https://api.groupme.com/v3/bots/post'
 
     data = {
-        'bot_id': '9dbb99f422e2783d8fc0e7005a',
+        'bot_id': os.getenv('BOT_ID'),
         'text': msg,
     }
     r = requests.post(url, data=data)
